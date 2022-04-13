@@ -1,0 +1,116 @@
+.mainHome {
+  width: 90%;
+  float: left;
+  margin: 0 5%;
+  /* border: 2px solid rgb(187, 187, 187); */
+  border-top: 0px;
+  border-bottom: none;
+}
+.homeSearch {
+  width: 80%;
+  margin: 0 10%;
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /* background-color: blue; */
+}
+.homeSearch .homeCnt {
+  float: left;
+  width: 100%;
+  /* background-color: red; */
+}
+.homeCnt .actives {
+  background-color: rgb(240, 240, 240);
+}
+
+.homeSearch span {
+  padding: 0.1% 2% 0.1% 2%;
+  float: left;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+}
+.homeSearch .input {
+  float: left;
+  /* background-color: yellow; */
+}
+.homeSearch .hmsearch {
+  border: 2px solid rgb(228, 228, 228);
+  width: 100%;
+  float: left;
+}
+.homeSearch .input {
+  width: 95%;
+  margin: 1% 2.5%;
+  height: 60px;
+  float: left;
+  padding: 1% 0;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.homeSearch input {
+  /* display: block; */
+  width: 75%;
+  height: 100%;
+  float: left;
+  border-radius: 5px;
+  border: none;
+  padding: 1%;
+}
+.hmSelect {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: red; */
+}
+.hmSelect select {
+  width: 20%;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  background: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0.5%;
+}
+.hmSelect select option {
+  background-color: white;
+}
+
+.homeSearch .btn {
+  /* padding: 0.3% 2% 0.3% 2%; */
+}
+
+@media screen and (max-width: 1000px) {
+  .mainHome {
+    width: 100%;
+    margin: 0;
+  }
+  .homeSearch .hmSelect {
+    /* width: 50%; */
+    display: block;
+    float: left;
+    text-align: center;
+  }
+  .hmSelect select {
+    width: 40%;
+    font-size: 13px;
+  }
+  .homeSearch .input {
+    display: block;
+    /* width: 100%; */
+    font-size: 13px;
+    height: auto;
+    text-align: center;
+  }
+  .homeSearch input {
+    width: 100%;
+    font-size: 13px;
+    margin-top: 5px;
+    border-radius: 0;
+    border-bottom: 1px solid rgb(226, 226, 226);
+  }
+  .homeSearch .btn {
+    font-size: 13px;
+  }
+}

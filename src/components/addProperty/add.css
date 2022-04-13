@@ -1,0 +1,122 @@
+#exampleModalToggle3 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#exampleModalToggle3.modal.show .modal-dialog {
+  width: 50vw;
+  height: 90vh;
+  margin: 5vh 25vw;
+}
+#exampleModalToggle3 .modal-dialog .forms {
+  /* background-color: red; */
+  width: 100%;
+}
+#exampleModalToggle3 .modal-dialog .form-group {
+  width: 90%;
+  margin: 0 5%;
+}
+#exampleModalToggle3 .modal-dialog .form-group input {
+  /* width: 90%;
+  margin: 0 5%; */
+  /* border-radius: 5px; */
+  border: 1px solid black;
+}
+#exampleModalToggle3 .modal-dialog .address {
+  width: 90%;
+  margin: 0 5%;
+  float: left;
+}
+#exampleModalToggle3 .modal-dialog .address input {
+  width: 20%;
+  float: left;
+  margin: 0 0% 0 4%;
+}
+#exampleModalToggle3 .modal-dialog .address select {
+  width: 20%;
+  font-size: 20px;
+  margin: 0 0% 0 4%;
+  float: left;
+}
+
+#exampleModalToggle3 .modal-dialog .price {
+  width: 90%;
+  margin: 0 5%;
+}
+#exampleModalToggle3 .modal-dialog .price div {
+  width: 45%;
+  /* margin: 0 2.5%; */
+  float: left;
+}
+#exampleModalToggle3 .modal-dialog .price div select {
+  width: 100%;
+  /* margin: 0 2.5%; */
+  font-size: 20px;
+  float: left;
+}
+#exampleModalToggle3 .modal-dialog label {
+  font-size: 21px;
+}
+
+#exampleModalToggle3 .modal-dialog .cat {
+  width: 90%;
+  float: left;
+  margin: 0 5%;
+}
+#exampleModalToggle3 .modal-dialog .cat p {
+  float: left;
+  padding: 0.5%;
+  font-size: 15px;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+#exampleModalToggle3 .modal-dialog .purpose {
+  width: 100%;
+  float: left;
+}
+#exampleModalToggle3 .modal-dialog .purpose div {
+  width: 50%;
+  /* margin: 0 2.5%; */
+  float: left;
+}
+#exampleModalToggle3 .modal-dialog .purpose div .buttons {
+  width: 100%;
+  float: left;
+}
+#exampleModalToggle3 .modal-dialog .btn {
+  width: 90%;
+  margin: 0 5%;
+  /* background-color: red; */
+  padding: 0;
+}
+#exampleModalToggle3 .modal-dialog .btn button {
+  width: 100%;
+  text-align: center;
+
+  border: 1px solid black;
+  height: 40px;
+}
+
+#exampleModalToggle3 .btn-close {
+  font-size: 15px;
+}
+#exampleModalToggle3 .modal-fullscreen .modal-header {
+  padding: 10px;
+}
+#exampleModalToggle3 .modal-dialog .imgSelect {
+  width: 90%;
+  margin: 10px 5%;
+  float: left;
+  /* background-color: red; */
+}
+#exampleModalToggle3 .modal-dialog .imgSelect #file {
+  display: none;
+  /* background-color: red; */
+}
+#exampleModalToggle3 .modal-dialog .imgSelect .addImg {
+  font-size: 20px;
+  padding: 50px;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+  /* background-color: red; */
+  border: 1px solid black;
+}

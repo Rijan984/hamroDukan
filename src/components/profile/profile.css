@@ -1,0 +1,135 @@
+/* .modal-backdrop.show {
+  opacity: 0 !important;
+  display: none;
+  background-color: red;
+} */
+
+.profile {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.show {
+  display: none;
+}
+/* .profile {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.show {
+  display: none;
+} */
+
+.profile-user {
+  /* background-color: rgb(247, 248, 247); */
+  background-color: #f4f6fc;
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+  /* height: 100vh; */
+  float: left;
+}
+.profile-user .logo {
+  width: 30%;
+  margin-top: 50px;
+  /* display: block; */
+  flex-direction: column;
+  height: 100%;
+  float: left;
+}
+.profile-user .logo img {
+  width: 40%;
+  border-radius: 100%;
+  /* background-color: red; */
+}
+.logo button {
+  margin-top: 30px;
+  border: none;
+  padding: 2%;
+}
+.logo .sitesLink {
+  margin-top: 30px;
+  width: 70%;
+  float: left;
+}
+.profile-user .info {
+  width: 70%;
+  float: left;
+}
+.topAcc {
+  width: 100%;
+  float: left;
+  margin: 40px 0 60px 0;
+}
+.profile-user .info .top {
+  width: 100%;
+  float: left;
+}
+.top h2 {
+  /* width: 50%; */
+  float: left;
+}
+.topAcc button {
+  float: right;
+  margin-right: 20px;
+}
+.top .topNav {
+  float: left;
+  width: 100%;
+  /* background-color: red; */
+}
+.top .topNav .tab {
+  font-weight: bold;
+  float: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgb(209, 208, 208);
+  border-radius: 5px 5px 0 0;
+  padding: 1% 2%;
+  /* width: 100px; */
+  font-size: 13px;
+}
+.top .topNav .active {
+  background-color: white;
+  border: 1px solid rgb(209, 208, 208);
+  border-bottom: 1px solid white;
+  color: rgb(97, 157, 248);
+}
+
+/* .top .topNav:focus {
+  border-bottom: 1px solid red;
+} */
+
+#exTab1 .tab-content {
+  color: white;
+  background-color: #428bca;
+  padding: 5px 15px;
+}
+
+#exTab2 h3 {
+  color: white;
+  background-color: #428bca;
+  padding: 5px 15px;
+}
+
+/* remove border radius for the tab */
+
+#exTab1 .nav-pills > li > a {
+  border-radius: 0;
+}
+
+/* change border radius for the tab , apply corners on top*/
+
+#exTab3 .nav-pills > li > a {
+  border-radius: 4px 4px 0 0;
+}
+
+#exTab3 .tab-content {
+  color: white;
+  background-color: #428bca;
+  padding: 5px 15px;
+}

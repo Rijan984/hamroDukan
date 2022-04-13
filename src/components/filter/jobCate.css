@@ -1,0 +1,91 @@
+.jobTitle {
+  width: 90%;
+  margin: 0 5% 0 5%;
+  float: left;
+  font-family: "Open Sans", sans-serif;
+}
+.jobTitle .title {
+  width: 100%;
+  float: left;
+  /* margin-left: 20px; */
+}
+.jobTitle .title h1 {
+  font-weight: bold;
+  font-size: 40px;
+  margin-left: 20px;
+}
+.jobTitle .title .para {
+  width: 100%;
+  float: left;
+}
+.jobTitle .title .para p {
+  float: left;
+  margin-left: 20px;
+}
+.jobTitle .title .para .second {
+  float: right;
+  color: rgb(71, 71, 247);
+}
+.jobTitle .jobcate .list i {
+  font-size: 40px;
+  color: rgb(71, 71, 247);
+}
+.jobTitle .jobcate {
+  text-align: center;
+  float: left;
+  width: 100%;
+  margin: 0 0% 20px 0%;
+}
+.jobTitle .jobcate .list {
+  width: 15%;
+  height: 200px;
+  float: left;
+  margin-right: 1.66%;
+  padding: 2%;
+  border-radius: 5px;
+  border: 1px solid rgb(146, 146, 146);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.jobTitle .jobcate .list .icons {
+  width: 100%;
+  height: 50%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.jobTitle .jobcate .list h4 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  .jobTitle .jobcate .list {
+    display: block;
+    width: 30%;
+    float: left;
+    margin: 10px 0% 0 2.5%;
+  }
+  .jobTitle .title h1 {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .jobTitle .jobcate .list {
+    display: block;
+    height: auto;
+    width: 30%;
+    font-size: 13px;
+    float: left;
+    margin: 10px 0% 0 13.33%;
+  }
+
+  .jobTitle .jobcate .list .icons {
+    display: none;
+
+    /* height: 0; */
+  }
+}
