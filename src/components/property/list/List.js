@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { Modal } from "react-bootstrap";
-import { data } from "../../property.js";
+import React, { useEffect, useState } from 'react';
+import { Modal } from 'react-bootstrap';
+import { data } from '../../property.js';
+import LoadingGif from '../../images/loading.gif';
 // import Search from "../searchProperty/Search";
-import "./list.css";
-const url2 = "https://electronic-ecommerce.herokuapp.com/api/v1/product";
+import './list.css';
+import Popup from '../Popup.js';
+const url2 = 'https://electronic-ecommerce.herokuapp.com/api/v1/product';
 function List({ search, minPrice }) {
   const [electric, setElectric] = useState();
   const [property, setProperty] = useState(electric);
   const [miPrice, setMiPrice] = useState(electric);
+  const [show, setShow] = useState();
+  const [info, setInfo] = useState();
 
   //   const [search, setSearch] = useState("");
   const fetchSecondUrl = async () => {
@@ -45,41 +49,53 @@ function List({ search, minPrice }) {
   //   }
   // }, [minPrice, miPrice]);
 
+  const showPop = (e, id, name, image, price, stock, category) => {
+    setShow(true);
+    setInfo({
+      ...info,
+      id,
+      name,
+      image,
+      price,
+      stock,
+      category,
+    });
+  };
   return (
     <div className="list">
       {/* <Search /> */}
-      {!property && <p style={{ textAlign: "center" }}>Loading.....</p>}
+      {!property && (
+        <p style={{ textAlign: 'center' }}>
+          <img src={LoadingGif} alt="loading..." />
+        </p>
+      )}
+      {show && <Popup info={info} setShow={setShow} />}
       {property && (
         <div className="propContent">
           {property.length <= 0 && (
             <p
               style={{
-                color: "red",
-                textAlign: "center",
-                margin: "100px 0",
-                fontSize: "20px",
-                fontWeight: "bold",
+                color: 'red',
+                textAlign: 'center',
+                margin: '100px 0',
+                fontSize: '20px',
+                fontWeight: 'bold',
               }}
             >
               No data found
             </p>
           )}
           {property.map((newData) => {
-            const {
-              id,
-              name,
-              image,
-              profileImg,
-              title,
-              address,
-              description,
-              price,
-              stock,
-            } = newData;
+            const { id, name, image, price, stock, category } = newData;
             const pic = `https://electronic-ecommerce.herokuapp.com/${image}`;
             return (
               <React.Fragment key={id}>
-                <div className="property">
+                <div
+                  className="property"
+                  onClick={(e) => {
+                    showPop(e, id, name, image, price, stock, category);
+                  }}
+                >
                   <div className="top">
                     {/* <div id="one">
                       <span
@@ -95,16 +111,16 @@ function List({ search, minPrice }) {
                     </div> */}
                     <span
                       style={{
-                        float: "right",
-                        backgroundColor: "rgb(226, 62, 62)",
+                        float: 'right',
+                        backgroundColor: 'rgb(226, 62, 62)',
                       }}
                     >
                       New Offer
                     </span>
                     <span
                       style={{
-                        float: "right",
-                        backgroundColor: "rgb(62, 128, 226)",
+                        float: 'right',
+                        backgroundColor: 'rgb(62, 128, 226)',
                       }}
                     >
                       Sales
@@ -127,12 +143,12 @@ function List({ search, minPrice }) {
                   </div>
                   <div className="propText">
                     <h4>{name}</h4>
-                    <p style={{ color: "#0079bf", fontWeight: "bold" }}>
+                    <p style={{ color: '#0079bf', fontWeight: 'bold' }}>
                       {price}
                     </p>
-                    <p>{description}</p>
+                    {/* <p>{description}</p> */}
                     <div className="details">
-                      <p style={{ marginRight: "10px" }}>Stock {stock}</p>
+                      <p style={{ marginRight: '10px' }}>Stock {stock}</p>
                     </div>
                   </div>
                   {/* <div className="userInfo">

@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
-import "./loading.css";
-import logo from ".././images/text.png";
-import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { selectUser } from "../../features/userSlice";
+import React, { useEffect, useState } from 'react';
+import './loading.css';
+import logo from '.././images/text.png';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../features/userSlice';
+import loadingGif from '.././images/loading.gif';
 function Loading() {
   // const [loading, setLoading] = useState(true);
   // const navigate = useNavigate();
@@ -20,7 +21,9 @@ function Loading() {
   return (
     <div className="logo">
       {/* <img src={logo} alt="Loading" /> */}
-      <h1>Loading....</h1>
+      <h1>
+        <img src={loadingGif} alt="" />
+      </h1>
     </div>
   );
 }

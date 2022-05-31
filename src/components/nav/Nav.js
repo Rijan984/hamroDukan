@@ -58,7 +58,6 @@ function Nav() {
           </Link>
         </button>
         <button className="btn" disabled style={{ margin: '0', padding: '0' }}>
-          {' '}
           <Link
             to="*"
             className={toogle === 3 ? 'link active' : 'link'}
