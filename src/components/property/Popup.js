@@ -20,19 +20,22 @@ function Popup({ info, setShow }) {
     setReduxCart(userName);
   }, [userName]);
 
-  // useEffect(() => {
-  //   if (itemId) {
-  //     const filterId = userName.filter((newData) => {
-  //       const { id } = newData;
+  useEffect(() => {
+    if (info) {
+      const filterId = userName.filter((newData) => {
+        const { id } = newData;
 
-  //       return id === info.id;
-  //     });
-  //     console.log(filterId[0]);
-  //     if (filterId) {
-  //       setHide(true);
-  //     }
-  //   }
-  // }, []);
+        return id === info.id;
+      });
+
+      // if(filterId.le)
+      if (filterId.length !== 0) {
+        if (filterId[0].id === info.id) {
+          setHide(true);
+        }
+      }
+    }
+  });
 
   const addCart = (e, id) => {
     e.preventDefault();
@@ -84,7 +87,7 @@ function Popup({ info, setShow }) {
                 Category: {info.category[1]} ({info.category[0]} item)
               </p>
               <p>Tota Area: </p>
-              {!hide ? (
+              {!hide && (
                 <button
                   className="btn btn-primary"
                   onClick={(e) => {
@@ -95,7 +98,8 @@ function Popup({ info, setShow }) {
                 >
                   Add to cart
                 </button>
-              ) : (
+              )}
+              {hide && (
                 <button className="btn btn-primary" disabled={true}>
                   Already Added
                 </button>

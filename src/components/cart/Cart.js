@@ -6,7 +6,7 @@ import itemContext from '../property/context/ItemContext';
 import './cart.css';
 function Cart() {
   const { cartItem, setReduxCart, disp, setDisp } = useContext(itemContext);
-  const [newData, setNewData] = useState();
+  const [newData, setNewData] = useState('');
   const redux = useSelector(selectCart);
   const cartsData = redux.data;
   useEffect(() => {
@@ -27,11 +27,12 @@ function Cart() {
     setReduxCart(filterData);
     // setDisp(false);
   };
+  // console.log(newData);
   return (
     <div className="cart">
       {/* <p>Carts</p> */}
       {/* {console.log(cartItem)} */}
-      {newData && (
+      {newData.length !== 0 ? (
         <div className="cartList">
           {newData.map((newCart, index) => {
             const { id, name, image, price, stock, category } = newCart;
@@ -63,6 +64,10 @@ function Cart() {
               </React.Fragment>
             );
           })}
+        </div>
+      ) : (
+        <div>
+          <p>Your Cart is empty</p>
         </div>
       )}
     </div>
