@@ -44,7 +44,7 @@ function Nav() {
         >
           Home
         </Link>
-        <button
+        {/* <button
           className="btn"
           disabled
           style={{ cursor: 'pointer', margin: '0', padding: '0' }}
@@ -83,16 +83,24 @@ function Nav() {
           >
             Blank
           </Link>
-        </button>
-        <button className="btn" disabled style={{ margin: '0', padding: '0' }}>
-          <Link
-            to="*"
-            className={toogle === 5 ? 'link active' : 'link'}
-            onClick={() => setToogle(5)}
-          >
-            Blog
-          </Link>
-        </button>
+        </button> */}
+
+        <Link
+          to="/cart"
+          className={toogle === 8 ? 'link active' : 'link'}
+          onClick={() => setToogle(8)}
+        >
+          Cart
+        </Link>
+
+        <Link
+          to="*"
+          className={toogle === 5 ? 'link active' : 'link'}
+          onClick={() => setToogle(5)}
+        >
+          Blog
+        </Link>
+
         <button className="btn" disabled style={{ margin: '0', padding: '0' }}>
           <Link
             to="*"
@@ -221,6 +229,7 @@ function Nav() {
           <Link to="/">Candidate</Link>
           <Link to="/">Employers</Link>
           <Link to="/">Blog</Link>
+          <Link to="/cart">Cart</Link>
 
           {/* {redux.username && <>Logout</>} */}
           {!redux.username ? (

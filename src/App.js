@@ -22,6 +22,8 @@ import Filter from './components/filter/Filter';
 import Nav from './components/nav/Nav';
 import Home from './components/home/Home';
 import Search from './components/property/searchGadgets/Search';
+import ItemState from './components/property/context/ItemsState';
+import Cart from './components/cart/Cart';
 // import NoteState from "./context/notes/NoteState";
 // import noteContext from "./context/notes/noteContext.js";
 const url = '/recent-property?Purpose=1';
@@ -62,6 +64,7 @@ function App() {
   }
   return (
     <>
+      {/* <State> */}
       {/* <NoteState> */}
       <Router>
         <div>
@@ -101,6 +104,7 @@ function App() {
                     element={<Navigate replace to="/profile" />}
                   />
                   <Route exact path="/jobs" element={<Filter />} />
+                  <Route exact path="/cart" element={<Cart />} />
                   <Route exact path="/property" element={<Search />} />
                 </>
               )}
@@ -114,6 +118,7 @@ function App() {
 
       {/* <div className="App">{loading ? <Loading /> : <Login />}</div> */}
       {/* </NoteState> */}
+      {/* </State> */}
     </>
   );
 }

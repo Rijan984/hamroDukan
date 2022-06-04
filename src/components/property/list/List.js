@@ -1,25 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { data } from '../../property.js';
 import LoadingGif from '../../images/loading.gif';
 // import Search from "../searchProperty/Search";
 import './list.css';
 import Popup from '../Popup.js';
-const url2 = 'https://electronic-ecommerce.herokuapp.com/api/v1/product';
+import itemContext from '../context/ItemContext.js';
+
 function List({ search, minPrice }) {
-  const [electric, setElectric] = useState();
+  const {
+    electric,
+    setElectric,
+    cartItem,
+    setCartItem,
+    itemId,
+    setItemId,
+  } = useContext(itemContext);
+  // const [] = useState();
   const [property, setProperty] = useState(electric);
   const [miPrice, setMiPrice] = useState(electric);
   const [show, setShow] = useState();
   const [info, setInfo] = useState();
 
   //   const [search, setSearch] = useState("");
-  const fetchSecondUrl = async () => {
-    const response = await fetch(url2);
-    const result = await response.json();
-    setElectric(result.data.product);
-    console.log(result.data.product);
-  };
+
   useEffect(() => {
     if (search) {
       const newProp = electric.filter((details) => {
@@ -33,9 +37,7 @@ function List({ search, minPrice }) {
       setMiPrice(electric);
     }
   }, [search, electric]);
-  useEffect(() => {
-    fetchSecondUrl();
-  }, []);
+
   // useEffect(() => {
   //   if (minPrice) {
   //     const newProp = miPrice.filter((details) => {

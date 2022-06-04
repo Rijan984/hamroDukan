@@ -1,13 +1,50 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { cartRedux, selectCart } from '../../features/userSlice';
+import itemContext from './context/ItemContext';
 import './popup.css';
+import { NotificationManager } from 'react-notifications';
 
 function Popup({ info, setShow }) {
+  const { itemId, setItemId, reduxCart, setReduxCart } = useContext(
+    itemContext
+  );
+  const [hide, setHide] = useState(false);
   const pic = `https://electronic-ecommerce.herokuapp.com/${info.image}`;
+  const dispatch = useDispatch();
 
-  console.log(info.category);
+  const reduxData = useSelector(selectCart);
+  const userName = reduxData.data;
+  // const [cartsData, setCartsData] = useState([info]);
+  useEffect(() => {
+    setReduxCart(userName);
+  }, [userName]);
+
+  // useEffect(() => {
+  //   if (itemId) {
+  //     const filterId = userName.filter((newData) => {
+  //       const { id } = newData;
+
+  //       return id === info.id;
+  //     });
+  //     console.log(filterId[0]);
+  //     if (filterId) {
+  //       setHide(true);
+  //     }
+  //   }
+  // }, []);
+
+  const addCart = (e, id) => {
+    e.preventDefault();
+    setItemId(id);
+    console.log(info);
+    setReduxCart([...reduxCart, info]);
+    NotificationManager.success('Addedto Cart', 'Info!', 3000);
+  };
+
   return (
     <div>
-      {console.log(info)}
+      {/* {console.log(info)} */}
       <div className="backDrop" onClick={() => setShow(false)}></div>
       <div className="mainBlog-popup">
         <div className="blogPopup">
@@ -47,7 +84,22 @@ function Popup({ info, setShow }) {
                 Category: {info.category[1]} ({info.category[0]} item)
               </p>
               <p>Tota Area: </p>
-              <button className="btn btn-primary">Add to cart</button>
+              {!hide ? (
+                <button
+                  className="btn btn-primary"
+                  onClick={(e) => {
+                    addCart(e, info.id, info.name, info.stock, info.price);
+
+                    console.log(userName);
+                  }}
+                >
+                  Add to cart
+                </button>
+              ) : (
+                <button className="btn btn-primary" disabled={true}>
+                  Already Added
+                </button>
+              )}
               {/* <p>Tota Area: </p>
               <p>Tota Area: </p>
               <p>Tota Area: </p> */}
