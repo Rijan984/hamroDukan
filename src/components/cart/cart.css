@@ -1,0 +1,40 @@
+.cart {
+  width: 100%;
+  float: left;
+  height: calc(100vh - 60px);
+  /* background-color: red; */
+  padding: 2%;
+  overflow-y: scroll;
+}
+.cart .cartList {
+  width: 100%;
+  float: left;
+  /* background-color: rgb(206, 206, 207); */
+}
+
+.cart .innerCart {
+  width: 100%;
+  padding: 2%;
+  float: left;
+  margin-top: 20px;
+  background-color: rgb(206, 206, 207);
+}
+.cart .innerCart img {
+  width: 100%;
+  float: left;
+}
+.cart .innerCart .picture {
+  height: 200px;
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  /* background-color: red; */
+}
+.cart .innerCart .desc {
+  width: 50%;
+  float: left;
+  margin-left: 20px;
+  padding: 2% 0 0 1%;
+}
